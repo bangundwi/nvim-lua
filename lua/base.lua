@@ -30,7 +30,8 @@ vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
 -- ThePrimeagen
-vim.opt.undodir = os.getenv("HOME").."/.vim.undodir"
+--[[ vim.opt.undodir ="~/.vim/undodir" ]]
+vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.colorcolumn = "80"

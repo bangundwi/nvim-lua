@@ -30,6 +30,8 @@ packer.startup(function(use)
   use("TimUntersberger/neogit")
   use("nvim-lua/popup.nvim")
 
+  use "rafamadriz/friendly-snippets"
+
   -- #################
 
 

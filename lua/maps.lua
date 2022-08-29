@@ -71,3 +71,44 @@ vim.keymap.set('n', '<leader>/', '<Cmd>Commentary<CR>', opts)
 vim.keymap.set('n', ',rn', '<Cmd> set relativenumber <CR>', opts)
 vim.keymap.set('n', ',nr', '<Cmd> set norelativenumber <CR>', opts)
 
+--vim.cmd [[
+--  augroup numbertoggle
+--	  autocmd!
+--	  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+--	  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+--  augroup END
+--]]
+
+
+--############# NEW ##############
+--shorten function name
+local keymaps = vim.keymap.set
+local optss = { silent = true}
+
+-- Visual
+-- Stay in indent mode
+keymaps("v", "<", "<gv", opts)
+keymaps("v", ">", ">gv", opts)
+
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c"
+
+--Beeter Paste
+keymaps("v","p", '"_dP', opts)
+
+-- Git
+keymaps("n", "<leader>ggc", ":Telescope git_commits<cr>", opts)
+keymaps("n", "<leader>ggs", ":Telescope git_status<cr>", opts)
+
+-- Comment
+keymaps("n", "<leader>cmm", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymaps("x", "<leader>cmm", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+
+--Clipboard
+vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+
