@@ -29,6 +29,28 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
+-- ThePrimeagen
+vim.opt.undodir = os.getenv("HOME").."/.vim.undodir"
+vim.opt.undofile = true
+vim.opt.swapfile = false
+vim.opt.colorcolumn = "80"
+
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+-- delays and poor user experience.
+vim.opt.updatetime = 50
+
+-- Don't pass messages to |ins-completion-menu|.
+vim.opt.shortmess:append("c")
+vim.opt.isfname:append("@-@")
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.errorbells = false
+
+
+--####################################
+
+
+
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])

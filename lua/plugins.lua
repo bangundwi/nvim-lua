@@ -9,10 +9,31 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
+  -- ColorSheme
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim'}
   }
+  use("gruvbox-community/gruvbox")
+  use("folke/tokyonight.nvim")
+
+  -- ThePrimeagen
+  use("nvim-treesitter/playground")
+  use("romgrk/nvim-treesitter-context")
+  use("mfussenegger/nvim-dap")
+  use("rcarriga/nvim-dap-ui")
+  use("theHamsta/nvim-dap-virtual-text")
+
+  use("ThePrimeagen/git-worktree.nvim")
+  use("ThePrimeagen/harpoon")
+  use("sbdchd/neoformat")
+  use("TimUntersberger/neogit")
+  use("nvim-lua/popup.nvim")
+
+  -- #################
+
+
+
   use 'kyazdani42/nvim-web-devicons' -- File Icons
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' --Snippet
